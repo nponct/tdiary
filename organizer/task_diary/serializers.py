@@ -4,4 +4,4 @@ from .import models
 class TasksSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Tasks
-        fields=('title','memo','is_deleted','created')
+        fields=('user','title','memo','is_deleted','created')

@@ -6,9 +6,10 @@ class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
 
 
 class TaskFilter(filters.FilterSet):
+    user = filters.CharFilter(lookup_expr='icontains')
     title = filters.CharFilter(lookup_expr='icontains')
     created = filters.RangeFilter()
 
     class Meta:
         model = Tasks
-        fields = ['title','created']
+        fields = ['user','title','created']
